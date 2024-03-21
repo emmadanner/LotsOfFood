@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace LotsOfFood.Views
 {
-    public partial class ItemDetailPage : ContentPage
+    public partial class OrderPage : ContentPage
     {
-        public ItemDetailPage()
+        public OrderPage()
         {
             InitializeComponent();
             BindingContext = new ItemDetailViewModel();
