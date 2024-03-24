@@ -69,7 +69,7 @@ namespace LotsOfFood.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(FoodItemPage));
         }
 
         async void OnItemSelected(FoodItem item)
@@ -78,7 +78,7 @@ namespace LotsOfFood.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(FoodItemPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.ItemID}");
         }
     }
 }

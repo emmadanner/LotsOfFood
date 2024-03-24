@@ -1,6 +1,8 @@
 ﻿using LotsOfFood.ViewModels;
 using System.ComponentModel;
 using Xamarin.Forms;
+using System;
+using System.Collections.Generic;
 
 namespace LotsOfFood.Views
 {
@@ -8,7 +10,7 @@ namespace LotsOfFood.Views
     {
         public OrderPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
             BindingContext = new ItemDetailViewModel();
         }
     }

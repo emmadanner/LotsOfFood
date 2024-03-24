@@ -14,12 +14,7 @@ namespace LotsOfFood.Services
         {
             items = new List<FoodItem>()
             {
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new FoodItem { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                
             };
         }
 
@@ -32,7 +27,7 @@ namespace LotsOfFood.Services
 
         public async Task<bool> UpdateItemAsync(FoodItem item)
         {
-            var oldItem = items.Where((FoodItem arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((FoodItem arg) => arg.ItemID == item.ItemID).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -41,7 +36,7 @@ namespace LotsOfFood.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((FoodItem arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((FoodItem arg) => arg.ItemID.ToString() == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
@@ -49,7 +44,7 @@ namespace LotsOfFood.Services
 
         public async Task<FoodItem> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.ItemID.ToString() == id));
         }
 
         public async Task<IEnumerable<FoodItem>> GetItemsAsync(bool forceRefresh = false)

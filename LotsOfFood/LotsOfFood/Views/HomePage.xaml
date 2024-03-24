@@ -4,7 +4,7 @@
     
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LotsOfFood.Views.AboutPage"
+             x:Class="LotsOfFood.Views.HomePage"
              xmlns:vm="clr-namespace:LotsOfFood.ViewModels"
              Title="{Binding Title}">
     

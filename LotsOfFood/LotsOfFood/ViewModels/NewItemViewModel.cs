@@ -51,8 +51,8 @@ namespace LotsOfFood.ViewModels
         {
             FoodItem newItem = new FoodItem()
             {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
+                //Id = item.ItemID.ToString(), (giving error)
+                //Text = item.ItemName, (giving error)
                 Description = Description
             };
 
