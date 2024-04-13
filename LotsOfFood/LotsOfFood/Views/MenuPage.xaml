@@ -7,28 +7,46 @@
              x:Class="LotsOfFood.Views.MenuPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:LotsOfFood.ViewModels"  
-             xmlns:model="clr-namespace:LotsOfFood.Models"  
+             xmlns:model="clr-namespace:LotsOfFood.Models" 
              x:Name="BrowseItemsPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="OnItemAdded">
-            <ToolbarItem.IconImageSource>
-                <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android, UWP" Value="plus.png" />
-                </OnPlatform>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                        <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <ContentPage.BindingContext>
+        <local:MenuPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#fffbef">
+            <ListView ItemsSource="{Binding FoodItem}"
+                      SelectionMode= "None"
+                      SeparatorVisibility="Default"
+                      SeparatorColor="LightGray"
+                      ItemTapped="OnFoodItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding ImageUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+
+                                <StackLayout Grid.Column="1" Margin="10,0,0,0">
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" FontSize="14" LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}" FontSize="16" VerticalOptions="End" />
+                                    <Stepper Value="{Binding Quantity}" Minimum="0" Increment="1" VerticalOptions="End" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Place Order" Command="{Binding PlaceOrderCommand}"
+                    FontSize="20" FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

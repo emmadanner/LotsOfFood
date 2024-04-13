@@ -1,14 +1,14 @@
 ﻿using System;
-using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
+using System.Text;
 using LotsOfFood.ViewModels;
 
 namespace LotsOfFood.Views
 {
-    public partial class HomePage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-        public HomePage()
+        public LoginPage()
         {
             InitializeComponent();
         }

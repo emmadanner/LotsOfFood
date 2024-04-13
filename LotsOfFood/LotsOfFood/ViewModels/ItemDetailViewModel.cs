@@ -45,8 +45,7 @@ namespace LotsOfFood.ViewModels
             {
                 var item = await DataStore.GetItemAsync(itemId);
                 Id = item.ItemID.ToString();
-                Text = item.ItemName;
-                Description = item.Description;
+               
             }
             catch (Exception)
             {

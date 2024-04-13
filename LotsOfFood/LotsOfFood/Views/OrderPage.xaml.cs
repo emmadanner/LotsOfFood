@@ -10,7 +10,7 @@ namespace LotsOfFood.Views
     {
         public OrderPage()
         {
-            //InitializeComponent();
+            InitializeComponent();
             BindingContext = new ItemDetailViewModel();
         }
     }

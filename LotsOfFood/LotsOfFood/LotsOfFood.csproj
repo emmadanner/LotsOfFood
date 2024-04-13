@@ -26,4 +26,10 @@
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

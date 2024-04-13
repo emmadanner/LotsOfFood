@@ -53,7 +53,7 @@ namespace LotsOfFood.ViewModels
             {
                 //Id = item.ItemID.ToString(), (giving error)
                 //Text = item.ItemName, (giving error)
-                Description = Description
+                
             };
 
             await DataStore.AddItemAsync(newItem);

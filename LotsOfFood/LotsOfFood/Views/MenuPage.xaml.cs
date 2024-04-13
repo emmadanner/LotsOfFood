@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using LotsOfFood.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using LotsOfFood.ViewModels;
+
 
 namespace LotsOfFood.Views
 {
@@ -16,29 +18,21 @@ namespace LotsOfFood.Views
         public MenuPage()
         {
             InitializeComponent();
+            BindingContext = new MenuPageViewModel(); 
         }
-        protected override async void OnAppearing()
+
+        private void OnFoodItemTapped(object sender, ItemTappedEventArgs e)
         {
-            base.OnAppearing();
-            //FoodItemDatabase database = await FoodItemDatabase.Instance;
-            listView.ItemsSource = await App.FoodDatabase.GetItemsAsync();
-        }
-        async void OnItemAdded(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new FoodItemPage
+            if (e.Item is FoodItem tappedFoodItem)
             {
-                BindingContext = new FoodItem()
-            });
-        }
-        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem != null)
-            {
-                await Navigation.PushAsync(new FoodItemPage
+                if (BindingContext is MenuPageViewModel viewModel && viewModel.NavigateToDetailCommand != null)
                 {
-                    BindingContext = e.SelectedItem as FoodItem
-                });
+                    viewModel.NavigateToDetailCommand.Execute(tappedFoodItem);
+                }
             }
+
+     
+     ((ListView)sender).SelectedItem = null;
         }
     }
 }

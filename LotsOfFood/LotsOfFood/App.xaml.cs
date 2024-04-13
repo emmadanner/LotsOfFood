@@ -5,6 +5,8 @@ using Xamarin.Forms.Xaml;
 using System.IO;
 using LotsOfFood.Views;
 
+
+
 namespace LotsOfFood
 {
     // one for each database (food and orders) I'm pretty sure this would be how they would be stored
@@ -40,7 +42,9 @@ namespace LotsOfFood
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MenuPage());
+            MainPage = new AppShell();
+            //MainPage = new NavigationPage(new HomePage());
+
         }
         protected override void OnStart()
         {
