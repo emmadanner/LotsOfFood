@@ -19,6 +19,5 @@ namespace LotsOfFood.Views
             InitializeComponent();
             BindingContext = new ItemDetailViewModel();
         }
-       
     }
 }

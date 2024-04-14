@@ -38,10 +38,10 @@ namespace LotsOfFood.ViewModels
         {
             FoodItem = new ObservableCollection<FoodItem>
             {
-                new FoodItem { Name = "Pizza", Price = 9.99, ItemID = 1, ImageUrl = "Pizza.png", Quantity = 0 },
-                new FoodItem { Name = "Burger", Price = 5.99, ItemID = 2, ImageUrl = "Burger.png", Quantity = 0 },
-                new FoodItem { Name = "Chicken Wings", Price = 5.99, ItemID = 2, ImageUrl = "Chicken.png", Quantity = 0 },
-                new FoodItem { Name = "Ramen", Price = 5.99, ItemID = 2, ImageUrl = "Ramen.png", Quantity = 0 },
+                new FoodItem { Name = "Pizza", Price = 9.99, ItemID = 1, ImageUrl = ".\\LotsOfFood\\LotsOfFood\\Images\\pizza.jpg", Quantity = 0 },
+                new FoodItem { Name = "Burger", Price = 5.99, ItemID = 2, ImageUrl = ".\\LotsOfFood\\LotsOfFood\\Images\\burger.jpg", Quantity = 0 },
+                new FoodItem { Name = "Chicken Wings", Price = 5.99, ItemID = 2, ImageUrl = ".\\LotsOfFood\\LotsOfFood\\Images\\chicken.jpg", Quantity = 0 },
+                new FoodItem { Name = "Ramen", Price = 5.99, ItemID = 2, ImageUrl = ".\\LotsOfFood\\LotsOfFood\\Images\\ramen.jpg", Quantity = 0 },
 
             };
         }

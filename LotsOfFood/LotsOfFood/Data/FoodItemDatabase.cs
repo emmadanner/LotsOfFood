@@ -16,6 +16,7 @@ namespace LotsOfFood.Data
             _database = new SQLiteAsyncConnection(dbpath);
             _database.CreateTableAsync<FoodItem>();
         }
+
         public Task<List<FoodItem>> GetItemsAsync()
         {
             return _database.Table<FoodItem>().ToListAsync();
