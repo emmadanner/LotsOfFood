@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace LotsOfFood.ViewModels
 
             Title = "Menu";
             LoadFoodItems();
-            PlaceOrderCommand = new Command(PlaceOrder);
+            PlaceOrderCommand = new Command(PlaceOrderAsync);
             NavigateToDetailCommand = new Command<FoodItem>(NavigateToDetailPage);
         }
 
@@ -46,9 +47,9 @@ namespace LotsOfFood.ViewModels
             };
         }
 
-        private void PlaceOrder()
+        private async void PlaceOrderAsync()
         {
-           
+            await Application.Current.MainPage.DisplayAlert("Order Placed", "Your order has been placed!", "OK");
         }
     }
 }
