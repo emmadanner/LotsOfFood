@@ -19,8 +19,8 @@
             <ListView ItemsSource="{Binding FoodItem}"
                       SelectionMode= "None"
                       SeparatorVisibility="Default"
-                      SeparatorColor="LightGray"
-                      ItemTapped="OnFoodItemTapped">
+                      SeparatorColor="LightGray">
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -45,7 +45,7 @@
             </ListView>
 
             <Button Text="Place Order" Command="{Binding PlaceOrderCommand}"
-                    FontSize="20" FontAttributes="Bold"
+                    FontSize="20" FontAttributes="Bold" BackgroundColor="#ffe7be" TextColor="Black"
                     HorizontalOptions="FillAndExpand" VerticalOptions="End" />
         </StackLayout>
     </ContentPage.Content>

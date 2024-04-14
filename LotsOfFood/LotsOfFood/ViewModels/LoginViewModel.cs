@@ -8,6 +8,20 @@ namespace LotsOfFood.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        private string _username;
+        private string _password;
+
+        public string Username
+        {
+            get => _username;
+            set => SetProperty(ref _username, value);
+        }
+
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
+        }
         public Command LoginCommand { get; }
 
         public LoginViewModel()
@@ -17,7 +31,7 @@ namespace LotsOfFood.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+           
             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         }
     }

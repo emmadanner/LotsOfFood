@@ -11,6 +11,7 @@ namespace LotsOfFood.Views
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = new LoginViewModel();
         }
     }
 }
