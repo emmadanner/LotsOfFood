@@ -21,5 +21,6 @@ namespace LotsOfFood.Views
             BindingContext = new MenuPageViewModel();
         }
 
+
     }
 }

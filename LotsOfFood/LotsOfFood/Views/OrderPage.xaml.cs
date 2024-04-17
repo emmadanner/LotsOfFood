@@ -11,7 +11,7 @@ namespace LotsOfFood.Views
         public OrderPage()
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel();
+            BindingContext = new OrderPageViewModel();
         }
     }
 }

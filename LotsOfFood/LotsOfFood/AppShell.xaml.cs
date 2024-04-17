@@ -11,7 +11,6 @@ namespace LotsOfFood
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(FoodItemPage), typeof(FoodItemPage));
         }
 
     }

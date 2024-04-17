@@ -1,17 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-    
-<!--list of items in order with submit/payment button-->
-    
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LotsOfFood.Views.OrderPage"
-             Title="{Binding Title}">
+             xmlns:local="clr-namespace:LotsOfFood.ViewModels"
+             xmlns:model="clr-namespace:LotsOfFood.Models" 
+             Title="Order Summary">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
-    </StackLayout>
     
+    <StackLayout Padding="20">
+
+        <!-- Order Items List -->
+        <ListView ItemsSource="{Binding OrderItems}"
+                      SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}" VerticalOptions="Center"/>
+                            <Label Text="{Binding Price, StringFormat=' - ${0:F2}'}" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Total Amount Label -->
+        <Label Text="{Binding TotalAmount, StringFormat='Total Amount: ${0:F2}'}"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="End"
+                   Margin="0,20,0,0"/>
+
+    </StackLayout>
 </ContentPage>

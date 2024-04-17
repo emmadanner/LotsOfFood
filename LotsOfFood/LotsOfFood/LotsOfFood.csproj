@@ -16,9 +16,6 @@
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\FoodItemPage.xaml.cs">
-      <DependentUpon>FoodItemPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>

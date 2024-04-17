@@ -22,31 +22,28 @@
                       SeparatorColor="LightGray">
 
                 <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Margin="5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
+                        <DataTemplate>
+                            <ViewCell>
+                            <Grid>
+                                <!-- Food Image (Centered) -->
+                                <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HorizontalOptions="Start"  />
 
-                                <StackLayout Margin="0,0,0,0">
-                                    <Image Source="{Binding ImageUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" Grid.Column="0" />
-                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" Grid.Column="1"/>
-                                    <Label Text="{Binding Description}" FontSize="14" LineBreakMode="TailTruncation"  Grid.Column="2"/>
-                                    <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}" FontSize="16" HorizontalTextAlignment="End" Grid.Column="3"/>
-                                    <Stepper Value="{Binding Quantity}" Minimum="0" Increment="1" VerticalOptions="End" Grid.Column="4"/>
-                                </StackLayout>
+                                <!-- Food Name (Centered) -->
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                           VerticalOptions="Center" Margin="0,10,0,0" />
+
+                                <!-- Food Price (Centered) -->
+                                <Label Text="{Binding Price, StringFormat='${0:F2}'}" FontSize="16" HorizontalTextAlignment="End" FontAttributes="Bold"
+                           VerticalOptions="Center" Margin="0,5,0,0" />
+
                             </Grid>
                         </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <Button Text="Place Order" Command="{Binding PlaceOrderCommand}"
+
+                <Button Text="Place Order" Command="{Binding PlaceOrderCommand}"
                     FontSize="20" FontAttributes="Bold" BackgroundColor="#ffe7be" TextColor="Black"
                     HorizontalOptions="FillAndExpand" VerticalOptions="End" />
         </StackLayout>
