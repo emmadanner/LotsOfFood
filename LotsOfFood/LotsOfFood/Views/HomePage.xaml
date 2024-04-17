@@ -31,7 +31,7 @@
 
         <!-- Main Content Section: Restaurant Image and Welcome Text -->
         <StackLayout Grid.Row="1" Padding="20">
-            <Image Source="resImg.png"
+            <Image Source="https://clipart-library.com/2023/27-277542_image-cartoon-pictures-of-restaurants.png"
                    HeightRequest="300"
                    Aspect="AspectFill"
                    Margin="0,0,0,20" />
